@@ -1,0 +1,2 @@
+# scansible
+Ansible scala wrapper
