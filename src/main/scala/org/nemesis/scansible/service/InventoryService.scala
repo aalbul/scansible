@@ -1,19 +1,14 @@
-package org.nemesis.scansible.inventory
+package org.nemesis.scansible.service
 
 import java.io.PrintWriter
 import java.nio.file.{Files, Path}
+
 import org.nemesis.scansible.model.Inventory
 
 /**
  * Created by aalbul on 9/15/15.
  */
 object InventoryService {
-  def writeToTempFile(inventory: Inventory): Path = {
-    val file = Files.createTempFile("scansible", "repo")
-    write(inventory, file)
-    file
-  }
-
   def write(inventory: Inventory, inventoryFile: Path): Unit = {
     Files.createDirectories(inventoryFile.getParent)
 

@@ -7,18 +7,22 @@ sealed trait AnsibleConnection {
   val name: String
 }
 
-object Smart extends AnsibleConnection {
-  override val name: String = "smart"
-}
+object AnsibleConnection {
 
-object Local extends AnsibleConnection {
-  override val name: String = "local"
-}
+  object Smart extends AnsibleConnection {
+    override val name: String = "smart"
+  }
 
-object Ssh extends AnsibleConnection {
-  override val name: String = "ssh"
-}
+  object Local extends AnsibleConnection {
+    override val name: String = "local"
+  }
 
-object Paramiko extends AnsibleConnection {
-  override val name: String = "paramiko"
+  object Ssh extends AnsibleConnection {
+    override val name: String = "ssh"
+  }
+
+  object Paramiko extends AnsibleConnection {
+    override val name: String = "paramiko"
+  }
+
 }

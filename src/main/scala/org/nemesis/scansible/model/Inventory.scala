@@ -1,5 +1,7 @@
 package org.nemesis.scansible.model
 
+import org.nemesis.scansible.model.InventoryGroup.Group
+
 /**
  * Created by aalbul on 9/14/15.
  */

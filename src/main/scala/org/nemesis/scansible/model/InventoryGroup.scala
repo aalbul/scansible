@@ -7,8 +7,12 @@ sealed trait InventoryGroup {
   val name: String
 }
 
-case object * extends InventoryGroup {
-  override val name: String = "*"
-}
+object InventoryGroup {
 
-case class Group(name: String) extends InventoryGroup
+  case object * extends InventoryGroup {
+    override val name: String = "*"
+  }
+
+  case class Group(name: String) extends InventoryGroup
+
+}
