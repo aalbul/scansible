@@ -15,7 +15,7 @@ object InventoryService {
     val writer = new PrintWriter(inventoryFile.toFile)
     try {
       inventory.hostGroups.keys.foreach(writer.println)
-      val hostsToGroup = inventory
+      inventory
         .hostGroups
         .toList
         .flatMap { case (host, groups) => groups.map(group => group -> host).toList }
@@ -23,7 +23,7 @@ object InventoryService {
         .map { case (group, hosts) => group -> hosts.map { case (_, host) => host } }
         .foreach { case (group, hosts) =>
           writer.println()
-          writer.println(s"[${group.name}]")
+          writer.println(s"[$group]")
           hosts.foreach(h => writer.println(h.resolvedAlias))
         }
     } finally {
