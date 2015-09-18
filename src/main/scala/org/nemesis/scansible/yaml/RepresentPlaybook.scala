@@ -19,7 +19,8 @@ class RepresentPlaybook(representDataFunction: (AnyRef) => Node) extends Represe
       playbook.sudo.map(sudo => "sudo" -> sudo),
       playbook.become.map(become => "become" -> become),
       playbook.becomeUser.map(becomeUser => "become_user" -> becomeUser),
-      playbook.becomeMethod.map(becomeMethod => "become_method" -> becomeMethod)
+      playbook.becomeMethod.map(becomeMethod => "become_method" -> becomeMethod),
+      playbook.tasks.map(tasks => "tasks" -> seqAsJavaList(tasks))
     ).flatten.toMap
 
     representDataFunction(seqAsJavaList(Seq(mapAsJavaMap(playbookMap))))
